@@ -1,8 +1,13 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
+    "baseUrl": "./",
+    "paths": {
+      "@pages/*": ["src/app/pages/*"],
+      "@components/*": ["src/app/components/*"],
+      "@shared/*": ["src/app/shared/*"]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

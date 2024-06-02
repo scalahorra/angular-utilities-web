@@ -1,16 +1,17 @@
 <div class="home-page">
   <div class="grid">
-    <div class="card">
-      <span>Cambiar extensión archivos</span>
-    </div>
-    <div class="card">
-      <span>Test 2</span>
-    </div>
-    <div class="card">
-      <span>Test 3</span>
-    </div>
-    <div class="card">
-      <span>Test 4</span>
-    </div>
+    @for (utility of homeUtilities; track $index) {
+      <div class="card" (click)="clickUtility(utility.action)">
+        <span>{{ utility.title }}</span>
+      </div>
+    }
   </div>
 </div>
+
+<app-generic-modal *ngIf="isModalOpen" (closeEvent)="closeModal()">
+  <div style="display: flex; flex-direction: column;">
+    <input type="file">
+    <input type="password">
+    <input type="email">
+  </div>
+</app-generic-modal>
